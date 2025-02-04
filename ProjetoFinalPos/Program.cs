@@ -1,7 +1,6 @@
-using ProjetoFinalPos.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using ProjetoFinalPos.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

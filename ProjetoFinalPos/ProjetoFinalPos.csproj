@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -7,7 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Properties\Controllers\HomeController.cs" />
+    <Compile Remove="Data\**" />
+    <Compile Remove="Properties\Controllers\**" />
+    <Content Remove="Data\**" />
+    <Content Remove="Properties\Controllers\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Properties\Controllers\**" />
+    <None Remove="Data\**" />
+    <None Remove="Properties\Controllers\**" />
+    <_WebToolingArtifacts Remove="Properties\Controllers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ClientsController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ProjetoFinalPosContext-cdbef6fb-842f-4a7e-a731-33e34e294a3a.db" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +33,11 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
   </ItemGroup>
 

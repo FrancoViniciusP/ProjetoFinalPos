@@ -33,9 +33,6 @@ namespace ProjetoFinalPos.Models
         [Required(ErrorMessage = "Order is required")]
         public int OrderId { get; set; }
 
-        [ForeignKey("OrderId")]
-        public Order Order { get; set; }
-
         [Required(ErrorMessage = "Product is required")]
         public int ProductId { get; set; }
 
