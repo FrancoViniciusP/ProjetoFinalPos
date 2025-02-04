@@ -5,7 +5,8 @@
 Este projeto é uma API para gerenciar clientes, produtos, pedidos e itens de pedidos. A API é construída usando ASP.NET Core e Entity Framework Core.
 
 ## Diagrama de Classes
-
+```mermaid
+classDiagram
 class Client { 
     int Id 
     string Name 
@@ -38,13 +39,13 @@ class OrderItem {
     double UnitPrice
     double TotalPrice
 }
-
 Client "1" --> "0..*" Order : places
 Order "1" --> "0..*" OrderItem : contains
 Product "1" --> "0..*" OrderItem : is part of
-
+```
 ## Diagrama de Sequência
-
+```mermaid
+sequenceDiagram 
 Client->>+OrdersController: POST /api/Orders
 OrdersController->>+ApplicationDbContext: Find Client by ID
 ApplicationDbContext-->>-OrdersController: Client Found
@@ -55,7 +56,7 @@ OrdersController->>+ApplicationDbContext: Update Stock Quantity
 OrdersController->>+ApplicationDbContext: Save Order and Items
 ApplicationDbContext-->>-OrdersController: Order Created
 OrdersController-->>-Client: 201 Created
-
+```
 
 ## Endpoints
 
